@@ -15,7 +15,7 @@ import {
 const AdminNavbar = () => {
   return (
     <>
-      <Navbar className="navbar-top navbar-horizontal navbar-blue" expand="md">
+      <Navbar className="navbar-top navbar-horizontal navbar-dark" expand="md">
         <Container className="px-4">
           <NavbarBrand to="/" tag={Link}>
             <img alt="..." src={require("../../assets/img/brand/logo9.png")} />
@@ -36,6 +36,13 @@ const AdminNavbar = () => {
             </div>
             <Nav className="ml-auto" navbar>
               <NavItem>
+                <NavLink className="nav-link-icon" to="/" tag={Link}>
+                  <i className="ni ni-world-2" />
+                  <span className="nav-link-inner--text">ABOUT US</span>
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
                 <NavLink className="nav-link-icon" to="/register" tag={Link}>
                   <i className="ni ni-circle-08" />
                   <span className="nav-link-inner--text">REGISTER</span>
@@ -45,6 +52,12 @@ const AdminNavbar = () => {
                 <NavLink className="nav-link-icon" to="/login" tag={Link}>
                   <i className="ni ni-key-25" />
                   <span className="nav-link-inner--text">LOGIN</span>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link-icon" to="/" tag={Link}>
+                  <i className="ni ni-email-83" />
+                  <span className="nav-link-inner--text">CONTACT US</span>
                 </NavLink>
               </NavItem>
             </Nav>

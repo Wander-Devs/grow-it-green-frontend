@@ -12,7 +12,7 @@ const Auth = (props) => {
   const location = useLocation();
 
   React.useEffect(() => {
-    document.body.classList.add("bg-default");
+    document.body.classList.add("bg-light");
     return () => {
       document.body.classList.remove("bg-default");
     };
@@ -43,13 +43,16 @@ const Auth = (props) => {
     <>
       <div className="main-content" ref={mainContent}>
         <AuthNavbar />
-        <div className="header bg-gradient-success py-7 py-lg-8">
+        <div className="header bg-gradient-dark py-7 py-lg-0">
           <Container>
             <div className="header-body text-center mb-7">
               <Row className="justify-content-center"></Row>
             </div>
           </Container>
-          <div className="separator separator-bottom separator-skew zindex-100"></div>
+
+          <div className="chart" align="center">
+            <img src={"https://wallpaperaccess.com/full/7150973.jpg"} />
+          </div>
         </div>
         {/* Page content */}
         <Container className="mt-9 pb-8">

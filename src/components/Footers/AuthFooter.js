@@ -9,15 +9,15 @@ const Login = () => {
           <Row className="align-items-center justify-content-xl-between">
             <Col xl="6">
               <div className="copyright text-center text-xl-left text-muted">
-                © {new Date().getFullYear()}{" "}
+                © 77GSI-{new Date().getFullYear()}{" "}
                 <a className="font-weight-bold ml-1">
-                  Grow it Green web assistant
+                  Grow it Green farming assistant
                 </a>
               </div>
             </Col>
             <Col xl="6">
               <Nav className="nav-footer justify-content-center justify-content-xl-end">
-                <NavItem>Grow it Green web assistant</NavItem>
+                <NavItem>Grow it Green farming assistant</NavItem>
                 <NavItem></NavItem>
               </Nav>
             </Col>
