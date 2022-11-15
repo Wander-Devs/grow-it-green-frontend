@@ -15,7 +15,7 @@ import {
   Col,
 } from "reactstrap";
 import * as authService from "../../services/auth";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [loginForm, setLoginForm] = useState({
@@ -30,7 +30,7 @@ const Login = () => {
       [e.currentTarget.name]: e.currentTarget.value,
     });
   };
-  const navigate = useNavigate();
+  const navigate = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     try {

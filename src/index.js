@@ -1,12 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Route,
-  Navigate,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import "assets/plugins/nucleo/css/nucleo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -22,12 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    {/* <Switch> */}
-    <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-    <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
-    <Route path="/login" render={(props) => <Login {...props} />} />
-    <Route path="/register" render={(props) => <Register {...props} />} />
-    <Navigate from="/" to="/auth/login" />
-    {/* </Switch> */}
+    <Switch>
+      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+      <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
+      <Route path="/login" render={(props) => <Login {...props} />} />
+      <Route path="/register" render={(props) => <Register {...props} />} />
+      <Redirect from="/" to="/auth/login" />
+    </Switch>
   </BrowserRouter>
 );
