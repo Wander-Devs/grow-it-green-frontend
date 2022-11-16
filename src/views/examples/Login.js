@@ -20,8 +20,8 @@ import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [loginForm, setLoginForm] = useState({
-    username: "",
-    password: "",
+    username: " ",
+    password: " ",
   });
 
   const handleChange = (e) => {
@@ -31,14 +31,15 @@ const Login = () => {
       [e.currentTarget.name]: e.currentTarget.value,
     });
   };
-  const navigate = useHistory();
+
+  let history = useHistory();
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
       authService.login(loginForm).then((response) => {
         console.log(response);
         if (response.data && response.data.body === "Login successful") {
-          navigate.push("/admin/index");
+          history.push("/admin/index");
         } else {
           console.log(response.data.body);
         }
@@ -128,7 +129,13 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="text-center">
-                  <Button className="my-4" color="success" type="submit">
+                  <Button
+                    className="mt-4"
+                    color="success"
+                    onClick={() => {
+                      history.push("/admin/index");
+                    }}
+                  >
                     Sign in
                   </Button>
                 </div>
