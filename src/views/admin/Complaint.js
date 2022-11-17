@@ -1,30 +1,11 @@
 import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Table,
-  Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
-  Button,
-  Fade,
-  Popover,
-  PopoverBody,
-  PopoverHeader,
-  Toast,
-  ToastBody,
-  ToastHeader,
-  UncontrolledAlert,
-} from "reactstrap";
+import { Table, Container, Button } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
-const Icons = () => {
+const Complaint = () => {
   const [copiedText, setCopiedText] = useState();
   return (
     <>
@@ -99,4 +80,4 @@ const Icons = () => {
   );
 };
 
-export default Icons;
+export default Complaint;

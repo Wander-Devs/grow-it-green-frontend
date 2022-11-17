@@ -8,8 +8,8 @@ import "assets/scss/argon-dashboard-react.scss";
 
 import AdminLayout from "layouts/Admin.js";
 import AuthLayout from "layouts/Auth.js";
-import Login from "views/examples/Login";
-import Register from "views/examples/Register";
+import Login from "views/admin/Login";
+import Register from "views/admin/Register";
 import FarmerLayout from "layouts/Farmer.js";
 import Index from "views/Index";
 import Sidebar from "components/Sidebar/Sidebar";

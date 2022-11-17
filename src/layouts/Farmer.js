@@ -8,8 +8,6 @@ import FarmerFooter from "components/Footers/FarmerFooter.js";
 import Sidebars from "components/Sidebar/Sidebars";
 import { farmer } from "routes";
 
-// import routes from "routes.js";
-
 const Farmer = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();

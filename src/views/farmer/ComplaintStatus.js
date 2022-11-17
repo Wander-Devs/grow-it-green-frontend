@@ -1,24 +1,5 @@
 // reactstrap components
-import {
-  Badge,
-  Card,
-  CardHeader,
-  Button,
-  CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
-  Pagination,
-  PaginationItem,
-  PaginationLink,
-  Progress,
-  Table,
-  Container,
-  Row,
-  UncontrolledTooltip,
-} from "reactstrap";
+import { Card, CardHeader, Button, Table, Container, Row } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 

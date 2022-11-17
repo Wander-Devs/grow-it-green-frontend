@@ -1,12 +1,9 @@
 import Index from "views/Index.js";
-import Profile from "views/examples/Profile.js";
-import Maps from "views/examples/Maps.js";
-import Register from "views/examples/Register.js";
-import Login from "views/examples/Login.js";
-import Tables from "views/examples/Tables.js";
-import Icons from "views/examples/Icons.js";
+import Profile from "views/admin/Profile.js";
+import Maps from "views/admin/FarmingTips";
+import Tables from "views/admin/Tables.js";
+import Icons from "views/admin/FarmingTips";
 import Auth from "layouts/Auth";
-import { login } from "services/auth";
 import SellProduct from "views/farmer/SellProduct";
 import ComplaintPage from "views/farmer/ComplaintPage";
 import ComplaintStatus from "views/farmer/ComplaintStatus";
@@ -15,6 +12,8 @@ import TrainingScheduling from "views/farmer/TrainingScheduling";
 import PaymentReceipt from "views/farmer/Payment Receipt";
 import Reports from "views/farmer/Reports";
 import FarmerProfile from "views/farmer/FarmerProfile";
+import Complaint from "views/admin/Complaint";
+import FarmingTips from "views/admin/FarmingTips";
 
 export const routes = [
   {
@@ -25,17 +24,17 @@ export const routes = [
     layout: "/admin",
   },
   {
-    path: "/icons",
+    path: "/Complaint",
     name: "COMPLAINT PAGE",
     icon: "ni ni-book-bookmark text-green",
-    component: Icons,
+    component: Complaint,
     layout: "/admin",
   },
   {
-    path: "/maps",
+    path: "/FarmingTips",
     name: "FARMING TIPS",
     icon: "ni ni-bell-55 text-green",
-    component: Maps,
+    component: FarmingTips,
     layout: "/admin",
   },
 
@@ -58,7 +57,7 @@ export const farmer = [
   {
     path: "/SellProduct",
     name: "SELL PRODUCT",
-    icon: "ni ni-box-2 text-green",
+    icon: "ni ni-bag-17 text-green",
     component: SellProduct,
     layout: "/farmer",
   },
@@ -81,28 +80,28 @@ export const farmer = [
   {
     path: "/CropAdvertisement",
     name: "CROP ADVERTISEMENTS",
-    icon: "ni ni-single-copy-04 text-green",
+    icon: "ni ni-briefcase-24 text-green",
     component: CropAdvertisement,
     layout: "/farmer",
   },
   {
     path: "/TrainingScheduling",
     name: "TRAINING SCHEDULING",
-    icon: "ni ni-single-copy-04 text-green",
+    icon: "ni ni-book-bookmark text-green",
     component: TrainingScheduling,
     layout: "/farmer",
   },
   {
     path: "/PaymentReceipt",
     name: "PAYMENT RECEIPT",
-    icon: "ni ni-single-copy-04 text-green",
+    icon: "ni ni-books text-green",
     component: PaymentReceipt,
     layout: "/farmer",
   },
   {
     path: "/Reports",
     name: "REPORTS",
-    icon: "ni ni-single-copy-04 text-green",
+    icon: "ni ni-bulb-61 text-green",
     component: Reports,
     layout: "/farmer",
   },
