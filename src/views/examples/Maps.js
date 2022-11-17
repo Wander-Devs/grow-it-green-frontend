@@ -1,117 +1,55 @@
-import React from "react";
-
+import { useState } from "react";
+// react component that copies the given text inside your clipboard
+import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
-import { Card, Container, Row } from "reactstrap";
-
+import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
-const MapWrapper = () => {
-  const mapRef = React.useRef(null);
-  React.useEffect(() => {
-    let google = window.google;
-    let map = mapRef.current;
-    let lat = "40.748817";
-    let lng = "-73.985428";
-    const myLatlng = new google.maps.LatLng(lat, lng);
-    const mapOptions = {
-      zoom: 12,
-      center: myLatlng,
-      scrollwheel: false,
-      zoomControl: true,
-      styles: [
-        {
-          featureType: "administrative",
-          elementType: "labels.text.fill",
-          stylers: [{ color: "#444444" }],
-        },
-        {
-          featureType: "landscape",
-          elementType: "all",
-          stylers: [{ color: "#f2f2f2" }],
-        },
-        {
-          featureType: "poi",
-          elementType: "all",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "road",
-          elementType: "all",
-          stylers: [{ saturation: -100 }, { lightness: 45 }],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "all",
-          stylers: [{ visibility: "simplified" }],
-        },
-        {
-          featureType: "road.arterial",
-          elementType: "labels.icon",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "transit",
-          elementType: "all",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "water",
-          elementType: "all",
-          stylers: [{ color: "#5e72e4" }, { visibility: "on" }],
-        },
-      ],
-    };
-
-    map = new google.maps.Map(map, mapOptions);
-
-    const marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      title: "Light Bootstrap Dashboard PRO React!",
-    });
-
-    const contentString =
-      '<div class="info-window-content"><h2>Light Bootstrap Dashboard PRO React</h2>' +
-      "<p>A premium Admin for React-Bootstrap, Bootstrap, React, and React Hooks.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
-  }, []);
-  return (
-    <>
-      <div
-        style={{ height: `600px` }}
-        className="map-canvas"
-        id="map-canvas"
-        ref={mapRef}
-      ></div>
-    </>
-  );
-};
-
-const Maps = () => {
+const Icons = () => {
+  const [copiedText, setCopiedText] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        <Row>
-          <div className="col">
-            <Card className="shadow border-0">
-              <MapWrapper />
-            </Card>
-          </div>
-        </Row>
+        {/* Table */}
+        <Form>
+          <FormGroup>
+            TIP NUMBER
+            <Input
+              id="text"
+              name="tip number"
+              placeholder="tip number"
+              type="number"
+            />
+          </FormGroup>{" "}
+          <FormGroup>
+            FARMER ID
+            <Input
+              id="text"
+              name="farmer id"
+              placeholder="farmer id"
+              type="text"
+            />
+          </FormGroup>{" "}
+          <FormGroup>
+            <Label for="text">TIPS</Label>
+            <Input id="Text" name="text" type="textarea" />
+          </FormGroup>
+          <Button
+            className="mt-4"
+            color="success"
+            // onClick={() => {
+            //   history.push("/admin/index");
+            // }}
+          >
+            SUBMIT
+          </Button>
+        </Form>
       </Container>
     </>
   );
 };
 
-export default Maps;
+export default Icons;

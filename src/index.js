@@ -10,6 +10,10 @@ import AdminLayout from "layouts/Admin.js";
 import AuthLayout from "layouts/Auth.js";
 import Login from "views/examples/Login";
 import Register from "views/examples/Register";
+import FarmerLayout from "layouts/Farmer.js";
+import Index from "views/Index";
+import Sidebar from "components/Sidebar/Sidebar";
+
 //import Login from "views/examples/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,6 +22,7 @@ root.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+      <Route path="/farmer" render={(props) => <FarmerLayout {...props} />} />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
