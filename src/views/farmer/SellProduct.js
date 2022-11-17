@@ -1,21 +1,20 @@
 import { useState } from "react";
 // react component that copies the given text inside your clipboard
-import { CopyToClipboard } from "react-copy-to-clipboard";
+
 // reactstrap components
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  Table,
   Container,
-  Row,
-  Col,
-  UncontrolledTooltip,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText,
+  Button,
 } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
-const Icons = () => {
+const SellProduct = () => {
   const [copiedText, setCopiedText] = useState();
   return (
     <>
@@ -25,84 +24,55 @@ const Icons = () => {
         {/* Table */}
         <Form>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
+            <Label for="id">ID#</Label>
+            <Input id="text" name="id" placeholder="id number" type="number" />
+          </FormGroup>
+          <FormGroup>
+            <Label for="name">SUPPLIER NAME</Label>
             <Input
-              id="exampleEmail"
-              name="email"
-              placeholder="with a placeholder"
-              type="email"
+              id="name"
+              name="name"
+              placeholder="supplier name"
+              type="text"
             />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Password</Label>
-            <Input
-              id="examplePassword"
-              name="password"
-              placeholder="password placeholder"
-              type="password"
-            />
+            <Label for="name">CROP NAME</Label>
+            <Input id="name" name="name" placeholder="crop name" type="text" />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleSelect">Select</Label>
-            <Input id="exampleSelect" name="select" type="select">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <Label for="id">QUANTITY</Label>
+            <Input id="text" name="id" placeholder="id number" type="number" />
+          </FormGroup>
+
+          <FormGroup>
+            <Label for="exampleSelect">Select Price</Label>
+            <Input id="Select" name="select" type="select">
+              <option>100</option>
+              <option>200</option>
+              <option>300</option>
+              <option>400</option>
+              <option>500</option>
+              <option>600</option>
+              <option>700</option>
+              <option>800</option>
+              <option>900</option>
+              <option>100</option>
+              <option>1100</option>
+              <option>1200</option>
             </Input>
           </FormGroup>
-          <FormGroup>
-            <Label for="exampleSelectMulti">Select Multiple</Label>
-            <Input
-              id="exampleSelectMulti"
-              multiple
-              name="selectMulti"
-              type="select"
-            >
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </Input>
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleText">Text Area</Label>
-            <Input id="exampleText" name="text" type="textarea" />
-          </FormGroup>
+
           <FormGroup>
             <Label for="exampleFile">File</Label>
             <Input id="exampleFile" name="file" type="file" />
-            <FormText>
-              This is some placeholder block-level help text for the above
-              input. It‘s a bit lighter and easily wraps to a new line.
-            </FormText>
+            <FormText>submit file/images</FormText>
           </FormGroup>
-          <FormGroup tag="fieldset">
-            <legend>Radio Buttons</legend>
-            <FormGroup check>
-              <Input name="radio1" type="radio" />{" "}
-              <Label check>
-                Option one is this and that—be sure to include why it‘s great
-              </Label>
-            </FormGroup>
-            <FormGroup check>
-              <Input name="radio1" type="radio" />{" "}
-              <Label check>
-                Option two can be something else and selecting it will deselect
-                option one
-              </Label>
-            </FormGroup>
-            <FormGroup check disabled>
-              <Input disabled name="radio1" type="radio" />{" "}
-              <Label check>Option three is disabled</Label>
-            </FormGroup>
-          </FormGroup>
-          <FormGroup check>
-            <Input type="checkbox" /> <Label check>Check me out</Label>
-          </FormGroup>
-          <Button>Submit</Button>
+          <FormGroup tag="fieldset"></FormGroup>
+
+          <Button className="mt-4" color="success">
+            Submit
+          </Button>
         </Form>
 
         {/* <Row>
@@ -2849,4 +2819,4 @@ const Icons = () => {
   );
 };
 
-export default Icons;
+export default SellProduct;

@@ -7,6 +7,14 @@ import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
 import Auth from "layouts/Auth";
 import { login } from "services/auth";
+import SellProduct from "views/farmer/SellProduct";
+import ComplaintPage from "views/farmer/ComplaintPage";
+import ComplaintStatus from "views/farmer/ComplaintStatus";
+import CropAdvertisement from "views/farmer/CropAdvertisement";
+import TrainingScheduling from "views/farmer/TrainingScheduling";
+import PaymentReceipt from "views/farmer/Payment Receipt";
+import Reports from "views/farmer/Reports";
+import FarmerProfile from "views/farmer/FarmerProfile";
 
 export const routes = [
   {
@@ -48,76 +56,70 @@ export const farmer = [
     layout: "/farmer",
   },
   {
-    path: "/icons",
+    path: "/SellProduct",
     name: "SELL PRODUCT",
-    icon: "ni ni-book-bookmark text-green",
-    component: Icons,
+    icon: "ni ni-box-2 text-green",
+    component: SellProduct,
     layout: "/farmer",
   },
   {
-    path: "/maps",
+    path: "/ComplaintPage",
     name: "COMPLAINT PAGE",
     icon: "ni ni-bell-55 text-green",
-    component: Maps,
+    component: ComplaintPage,
     layout: "/farmer",
   },
 
   {
-    path: "/tables",
+    path: "/ComplaintStatus",
     name: "COMPLAINT STATUS",
     icon: "ni ni-single-copy-04 text-green",
-    component: Tables,
+    component: ComplaintStatus,
     layout: "/farmer",
-  },
-  {
-    path: "/icons",
-    name: "OTHER",
-    icon: "ni ni-single-copy-04 text-green",
-    component: Index,
-    layout: "/farmer",
-  },
-  {
-    path: "/tables",
-    name: "CROP ADVERTISEMENTS",
-    icon: "ni ni-single-copy-04 text-green",
-    component: Tables,
-    layout: "/farmer",
-  },
-  {
-    path: "/tables",
-    name: "SELL PRODUCT DETAILS",
-    icon: "ni ni-single-copy-04 text-green",
-    component: Tables,
-    layout: "/farmer",
-  },
-  {
-    path: "/tables",
-    name: "PAYMENT RECEIPT",
-    icon: "ni ni-single-copy-04 text-green",
-    component: Tables,
-    layout: "/farmer",
-  },
-  {
-    path: "/tables",
-    name: "TRAINING SCHEDULING",
-    icon: "ni ni-single-copy-04 text-green",
-    component: Tables,
-    layout: "/farmer",
-  },
-  {
-    path: "/user-profile",
-    name: "PROFILE",
-    icon: "ni ni-circle-08 text-green",
-    component: Profile,
-    layout: "/admin",
   },
 
   {
-    path: "/index",
+    path: "/CropAdvertisement",
+    name: "CROP ADVERTISEMENTS",
+    icon: "ni ni-single-copy-04 text-green",
+    component: CropAdvertisement,
+    layout: "/farmer",
+  },
+  {
+    path: "/TrainingScheduling",
+    name: "TRAINING SCHEDULING",
+    icon: "ni ni-single-copy-04 text-green",
+    component: TrainingScheduling,
+    layout: "/farmer",
+  },
+  {
+    path: "/PaymentReceipt",
+    name: "PAYMENT RECEIPT",
+    icon: "ni ni-single-copy-04 text-green",
+    component: PaymentReceipt,
+    layout: "/farmer",
+  },
+  {
+    path: "/Reports",
+    name: "REPORTS",
+    icon: "ni ni-single-copy-04 text-green",
+    component: Reports,
+    layout: "/farmer",
+  },
+  {
+    path: "/FarmerProfile",
+    name: "PROFILE",
+    icon: "ni ni-circle-08 text-green",
+    component: FarmerProfile,
+    layout: "/farmer",
+  },
+
+  {
+    path: "/FarmerProfile",
     name: "LOGOUT",
     icon: "ni ni-button-power text-danger",
-    component: Index,
-    layout: "/farmer",
+    component: Auth,
+    layout: "/auth/login",
   },
 ];
 export const supplier = [
