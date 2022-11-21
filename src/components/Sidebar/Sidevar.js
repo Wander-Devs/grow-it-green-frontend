@@ -2,6 +2,8 @@ import { useState } from "react";
 import { NavLink as NavLinkRRD, Link } from "react-router-dom";
 
 import { PropTypes } from "prop-types";
+import React from "react";
+// import { supplier } from "../../routes";
 
 // reactstrap components
 import {
@@ -25,11 +27,11 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { farmer } from "routes";
+import { supplier } from "routes";
 
 var ps;
 
-const Sidebars = (props) => {
+const Sidevar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
@@ -194,7 +196,7 @@ const Sidebars = (props) => {
             </InputGroup>
           </Form>
           {/* Navigation */}
-          <Nav navbar>{createLinks(farmer)}</Nav>
+          <Nav navbar>{createLinks(supplier)}</Nav>
 
           {/* Divider */}
           <hr className="my-3" />
@@ -207,11 +209,11 @@ const Sidebars = (props) => {
   );
 };
 
-Sidebars.defaultProps = {
+Sidevar.defaultProps = {
   routes: [{}],
 };
 
-Sidebars.propTypes = {
+Sidevar.propTypes = {
   // links that will be displayed inside the component
   routes: PropTypes.arrayOf(PropTypes.object),
   logo: PropTypes.shape({
@@ -228,4 +230,4 @@ Sidebars.propTypes = {
   }),
 };
 
-export default Sidebars;
+export default Sidevar;

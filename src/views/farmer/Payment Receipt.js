@@ -13,7 +13,7 @@ const PaymentReceipt = () => {
       {/* Page content */}
       <Container className="mt-4" fluid>
         {/* Table */}
-        <Table dark>
+        <Table>
           <thead>
             <tr>
               <th>ID#</th>

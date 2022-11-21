@@ -11,7 +11,7 @@ const ComplaintPage = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt-4" fluid>
+      <Container className="d-flex justify-content-center mt-5">
         {/* Table */}
         <Form>
           <FormGroup>

@@ -11,6 +11,7 @@ import AuthLayout from "layouts/Auth.js";
 import Login from "views/admin/Login";
 import Register from "views/admin/Register";
 import FarmerLayout from "layouts/Farmer.js";
+import SupplierLayout from "layouts/Supplier.js";
 import Index from "views/Index";
 import Sidebar from "components/Sidebar/Sidebar";
 
@@ -23,6 +24,10 @@ root.render(
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Route path="/farmer" render={(props) => <FarmerLayout {...props} />} />
+      <Route
+        path="/supplier"
+        render={(props) => <SupplierLayout {...props} />}
+      />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />

@@ -20,13 +20,11 @@ const TrainingScheduling = () => {
     <>
       <Header />
       {/* Page content */}
-      <Container className="d-flex justify-content-center mt-2">
+      <Container className="d-flex justify-content-center mt-5">
         {/* Table */}
         <Form>
           <FormGroup>
-            <Label for="exampleEmail">
-              <h3>PICK DATE AND COURSES</h3>
-            </Label>
+            <Label for="exampleEmail">PAYMENT</Label>
           </FormGroup>
           <FormGroup>
             <Label for="id">ID NUMBER</Label>
@@ -51,7 +49,7 @@ const TrainingScheduling = () => {
               type="date"
             />
           </FormGroup>
-          <FormGroup>
+          {/* <FormGroup>
             <Label for="exampleTime">Time</Label>
             <Input
               id="exampleTime"
@@ -59,14 +57,14 @@ const TrainingScheduling = () => {
               placeholder="time placeholder"
               type="time"
             />
-          </FormGroup>
+          </FormGroup> */}
 
           <FormGroup>
-            <Label for="exampleSelect">SELECT COURSES</Label>
+            <Label for="exampleSelect">MODE OF PAYMENT</Label>
             <Input id="exampleSelect" name="select" type="select">
-              <option>Basic Computer Operation</option>
-              <option>Troubleshooting</option>
-              <option>Editing Platform Online</option>
+              <option>Cash On Delivery</option>
+              <option>Bank Transfer</option>
+              <option>Gcash</option>
             </Input>
           </FormGroup>
 
