@@ -160,4 +160,11 @@ export const supplier = [
     component: Profile,
     layout: "/supplier",
   },
+  {
+    path: "/SupplierProfile",
+    name: "LOGOUT",
+    icon: "ni ni-button-power text-danger",
+    component: Auth,
+    layout: "/auth/login",
+  },
 ];
