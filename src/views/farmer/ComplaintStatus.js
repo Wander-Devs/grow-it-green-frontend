@@ -30,7 +30,7 @@ const ComplaintStatus = () => {
                       <tr>
                         <th scope="row">001</th>
                         <td>0001</td>
-                        <td>IM REALLY SORRY MS L.</td>
+                        <td>Disappointed</td>
                         <td>
                           <Button color="warning" outline>
                             VIEWED
@@ -40,7 +40,7 @@ const ComplaintStatus = () => {
                       <tr>
                         <th scope="row">002</th>
                         <td>0002</td>
-                        <td>I CANT DO THIS ANYMORE</td>
+                        <td>Bad Service</td>
                         <td>
                           <Button color="warning" outline>
                             VIEWED
@@ -50,7 +50,7 @@ const ComplaintStatus = () => {
                       <tr>
                         <th scope="row">003</th>
                         <td>0003</td>
-                        <td>I NEED SOME LOVE</td>
+                        <td>Poor Quality</td>
                         <td>
                           <Button color="warning" outline>
                             VIEWED

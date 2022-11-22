@@ -20,10 +20,13 @@ const TrainingScheduling = () => {
     <>
       <Header />
 
-      <Container className="d-flex justify-content-center mt-5" fulid>
+      <Container className="mt-4" fluid>
+        {/* Table */}
         <Form>
           <FormGroup>
-            <Label for="exampleEmail">PICK DATE AND COURSES</Label>
+            <Label for="exampleEmail">
+              <h3>PICK DATE AND COURSES</h3>
+            </Label>
           </FormGroup>
           <FormGroup>
             <Label for="id">ID NUMBER</Label>
@@ -40,7 +43,7 @@ const TrainingScheduling = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="exampleDate">Date</Label>
+            <Label for="exampleDate">DATE</Label>
             <Input
               id="exampleDate"
               name="date"
@@ -63,7 +66,7 @@ const TrainingScheduling = () => {
             <Input id="exampleSelect" name="select" type="select">
               <option>Basic Computer Operation</option>
               <option>Troubleshooting</option>
-              <option>Editing platform Online</option>
+              <option>Editing Platform Online</option>
             </Input>
           </FormGroup>
 

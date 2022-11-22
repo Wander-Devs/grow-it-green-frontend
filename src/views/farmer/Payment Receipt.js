@@ -10,7 +10,8 @@ const PaymentReceipt = () => {
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        <Table dark>
+        {/* Table */}
+        <Table>
           <thead>
             <tr>
               <th>ID NO.</th>

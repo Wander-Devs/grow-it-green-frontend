@@ -29,7 +29,7 @@ import { farmer } from "routes";
 
 var ps;
 
-const Sidebar = (props) => {
+const Sidebars = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
@@ -207,11 +207,11 @@ const Sidebar = (props) => {
   );
 };
 
-Sidebar.defaultProps = {
+Sidebars.defaultProps = {
   routes: [{}],
 };
 
-Sidebar.propTypes = {
+Sidebars.propTypes = {
   // links that will be displayed inside the component
   routes: PropTypes.arrayOf(PropTypes.object),
   logo: PropTypes.shape({
@@ -228,4 +228,4 @@ Sidebar.propTypes = {
   }),
 };
 
-export default Sidebar;
+export default Sidebars;
