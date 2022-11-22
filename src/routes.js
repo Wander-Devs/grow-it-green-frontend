@@ -14,6 +14,9 @@ import Reports from "views/farmer/Reports";
 import FarmerProfile from "views/farmer/FarmerProfile";
 import Complaint from "views/admin/Complaint";
 import FarmingTips from "views/admin/FarmingTips";
+import UserList from "views/admin/UserList";
+import SupplierProfile from "views/supplier/Profile";
+import CropReceived from "views/supplier/CropReceived";
 
 export const routes = [
   {
@@ -131,7 +134,7 @@ export const farmer = [
 export const supplier = [
   {
     path: "/index",
-    name: "DASHBOARD DASHBOARD",
+    name: "SUUPLIER DASHBOARD",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
     layout: "/supplier",
@@ -145,9 +148,9 @@ export const supplier = [
   },
   {
     path: "/CropReceived",
-    name: "MAPS",
+    name: "CROP RECEIVED",
     icon: "ni ni-pin-3 text-orange",
-    component: Maps,
+    component: CropReceived,
     layout: "/supplier",
   },
   {
@@ -155,13 +158,6 @@ export const supplier = [
     name: "PROFILE",
     icon: "ni ni-single-02 text-yellow",
     component: Profile,
-    layout: "/supplier",
-  },
-  {
-    path: "/SupplierProfile",
-    name: "REPORTS",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: SupplierProfile,
     layout: "/supplier",
   },
 ];
