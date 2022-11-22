@@ -3,12 +3,12 @@ import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
-import FarmerNavbar from "components/Navbars/FarmerNavbar.js";
+import SupplierNavbar from "components/Navbars/SupplierNavbar.js";
 import FarmerFooter from "components/Footers/FarmerFooter.js";
-import Sidebars from "components/Sidebar/Sidebars";
-import { farmer } from "routes";
+import Sidevar from "../components/Sidebar/Sidevar";
+import { supplier } from "routes";
 
-const Farmer = (props) => {
+const Supplier = (props) => {
   const mainContent = React.useRef(null);
   const location = useLocation();
 
@@ -18,9 +18,9 @@ const Farmer = (props) => {
     mainContent.current.scrollTop = 0;
   }, [location]);
 
-  const getRoutes = (farmer) => {
-    return farmer.map((prop, key) => {
-      if (prop.layout === "/farmer") {
+  const getRoutes = (supplier) => {
+    return supplier.map((prop, key) => {
+      if (prop.layout === "/supplier") {
         return (
           <Route
             path={prop.layout + prop.path}
@@ -34,13 +34,14 @@ const Farmer = (props) => {
     });
   };
 
-  const getBrandText = () => {
-    for (let i = 0; i < farmer.length; i++) {
+  const getBrandText = (path) => {
+    for (let i = 0; i < supplier.length; i++) {
       if (
-        props.location.pathname.indexOf(farmer[i].layout + farmer[i].path) !==
-        -1
+        props.location.pathname.indexOf(
+          supplier[i].layout + supplier[i].path
+        ) !== -1
       ) {
-        return farmer[i].name;
+        return supplier[i].name;
       }
     }
     return "Click";
@@ -48,23 +49,23 @@ const Farmer = (props) => {
 
   return (
     <>
-      <Sidebars
+      <Sidevar
         {...props}
-        farmer={farmer}
+        supplier={supplier}
         logo={{
-          innerLink: "/farmer/index",
+          innerLink: "/supplier/index",
           imgSrc: require("../assets/img/brand/logo9.png"),
           imgAlt: "...",
         }}
       />
       <div className="main-content" ref={mainContent}>
-        <FarmerNavbar
+        <SupplierNavbar
           {...props}
           brandText={getBrandText(props.location.pathname)}
         />
         <Switch>
-          {getRoutes(farmer)}
-          <Redirect from="*" to="/farmer/index" />
+          {getRoutes(supplier)}
+          <Redirect from="*" to="/supplier/index" />
         </Switch>
         <Container fluid>
           {/* <Home /> */}
@@ -75,4 +76,4 @@ const Farmer = (props) => {
   );
 };
 
-export default Farmer;
+export default Supplier;

@@ -1,22 +1,19 @@
 import { useState } from "react";
-// react component that copies the given text inside your clipboard
-// reactstrap components
 import { Container, Table, Button } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
 const PaymentReceipt = () => {
-  const [copiedText, setCopiedText] = useState();
+  const [] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        {/* Table */}
         <Table dark>
           <thead>
             <tr>
-              <th>ID#</th>
+              <th>ID NO.</th>
               <th>CROP NAME</th>
               <th>QUANTITY</th>
               <th>TRANSACTIONS</th>

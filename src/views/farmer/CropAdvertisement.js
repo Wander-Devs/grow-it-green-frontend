@@ -5,13 +5,12 @@ import { Container, Table, Button } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const CropAdvertisement = () => {
-  const [copiedText, setCopiedText] = useState();
+  const [] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        {/* Table */}
         <Table>
           <thead>
             <tr>

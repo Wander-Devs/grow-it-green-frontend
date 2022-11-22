@@ -55,7 +55,7 @@ const AdminNavbar = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link-icon" to="/" tag={Link}>
+                <NavLink className="nav-link-icon" to="/contactus" tag={Link}>
                   <i className="ni ni-email-83" />
                   <span className="nav-link-inner--text">CONTACT US</span>
                 </NavLink>

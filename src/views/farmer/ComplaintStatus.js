@@ -9,7 +9,6 @@ const ComplaintStatus = () => {
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        {/* Table */}
         <Row>
           <div className="col">
             <Card className="shadow">

@@ -1,7 +1,7 @@
 import Index from "views/Index.js";
 import Profile from "views/admin/Profile.js";
 import Maps from "views/admin/FarmingTips";
-import Tables from "views/admin/Tables.js";
+import Tables from "views/admin/Complaint";
 import Icons from "views/admin/FarmingTips";
 import Auth from "layouts/Auth";
 import SellProduct from "views/farmer/SellProduct";
@@ -14,6 +14,10 @@ import Reports from "views/farmer/Reports";
 import FarmerProfile from "views/farmer/FarmerProfile";
 import Complaint from "views/admin/Complaint";
 import FarmingTips from "views/admin/FarmingTips";
+import CropPayment from "views/supplier/CropPayment";
+import PostAdvertisement from "views/supplier/PostAdvertisement";
+import CropReceived from "views/supplier/CropReceived";
+import UserList from "views/admin/UserList";
 
 export const routes = [
   {
@@ -43,6 +47,13 @@ export const routes = [
     name: "LOGOUT",
     icon: "ni ni-button-power text-danger",
     component: Auth,
+    layout: "/admin",
+  },
+  {
+    path: "/user",
+    name: "USER LIST",
+    icon: "ni ni-button-power text-danger",
+    component: UserList,
     layout: "/admin",
   },
 ];
@@ -124,37 +135,44 @@ export const farmer = [
 export const supplier = [
   {
     path: "/index",
-    name: "DASHBOARD",
-    icon: "ni ni-tv-2 text-primary",
+    name: "SUPPLIER DASHBOARD",
+    icon: "ni ni-folder-17 text-green",
     component: Index,
     layout: "/supplier",
   },
   {
-    path: "/icons",
-    name: "SELL PRODUCTS",
-    icon: "ni ni-planet text-blue",
-    component: Icons,
+    path: "/PostAdvertisement",
+    name: "ADVERTISEMENT",
+    icon: "ni ni-briefcase-24 text-green",
+    component: PostAdvertisement,
     layout: "/supplier",
   },
   {
-    path: "/maps",
-    name: "MAPS",
-    icon: "ni ni-pin-3 text-orange",
-    component: Maps,
+    path: "/CropReceived",
+    name: "ORDERS",
+    icon: "ni ni-bag-17 text-green",
+    component: CropReceived,
     layout: "/supplier",
   },
   {
-    path: "/user-profile",
-    name: "PROFILE",
-    icon: "ni ni-single-02 text-yellow",
-    component: Profile,
+    path: "/CropPayment",
+    name: "PAYMENT",
+    icon: "ni ni-books text-green",
+    component: CropPayment,
     layout: "/supplier",
   },
   {
-    path: "/tables",
+    path: "/Reports",
     name: "REPORTS",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: Tables,
+    icon: "ni ni-bulb-61 text-green",
+    component: Reports,
     layout: "/supplier",
+  },
+  {
+    path: "/SupplierProfile",
+    name: "LOGOUT",
+    icon: "ni ni-button-power text-danger",
+    component: Auth,
+    layout: "/auth/login",
   },
 ];

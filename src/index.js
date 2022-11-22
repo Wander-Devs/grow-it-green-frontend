@@ -11,8 +11,8 @@ import AuthLayout from "layouts/Auth.js";
 import Login from "views/admin/Login";
 import Register from "views/admin/Register";
 import FarmerLayout from "layouts/Farmer.js";
-import Index from "views/Index";
-import Sidebar from "components/Sidebar/Sidebar";
+import SupplierLayout from "layouts/Supplier";
+import ContactUs from "views/admin/ContactUs";
 
 //import Login from "views/examples/Login";
 
@@ -23,9 +23,14 @@ root.render(
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Route path="/farmer" render={(props) => <FarmerLayout {...props} />} />
+      <Route
+        path="/supplier"
+        render={(props) => <SupplierLayout {...props} />}
+      />
       <Route path="/auth" render={(props) => <AuthLayout {...props} />} />
       <Route path="/login" render={(props) => <Login {...props} />} />
       <Route path="/register" render={(props) => <Register {...props} />} />
+      <Route path="/contactus" render={(props) => <ContactUs {...props} />} />
       <Redirect from="/" to="/auth/login" />
     </Switch>
   </BrowserRouter>

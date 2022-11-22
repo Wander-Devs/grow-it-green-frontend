@@ -1,78 +1,75 @@
-import { useState } from "react";
-// react component that copies the given text inside your clipboard
+import { useState, useEffect } from "react";
+import * as complaintService from "services/complaint";
 // reactstrap components
-import { Table, Container, Button } from "reactstrap";
+import {
+  Table,
+  Container,
+  Button,
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+} from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
 const Complaint = () => {
-  const [copiedText, setCopiedText] = useState();
+  const [complaints, setComplaints] = useState([]);
+  const getComplaints = () => {
+    complaintService.getAllComplaints().then((res) => {
+      if (res && res.data) {
+        setComplaints(res.data.body);
+      }
+    });
+  };
+
+  useEffect(() => {
+    getComplaints();
+  }, []);
+  console.log(complaints);
+  const handleDelete = (id) => {
+    complaintService.deleteComplaintById(id);
+    setComplaints(complaints.filter((complaint) => complaint.id !== id));
+  };
+
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="mt-4" fluid>
-        {/* Table */}
         <Table hover>
           <thead>
             <tr>
-              <th>ID#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
+              <th>ID NO.</th>
+              <th>User ID</th>
               <th>Complaint</th>
+              <th>Status</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>
-                <div>
-                  <Button color="danger">View Complaint</Button>
-                </div>
-              </td>
-              <td>
-                <div>
-                  <Button color="success">Update Complaint</Button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>
-                <div>
-                  <Button color="danger">View Complaint</Button>
-                </div>
-              </td>
-              <td>
-                <div>
-                  <Button color="success">Update Complaint</Button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td>
-                <div>
-                  <Button color="danger">View Complaint</Button>
-                </div>
-              </td>
-              <td>
-                <div>
-                  <Button color="success">Update Complaint</Button>
-                </div>
-              </td>
-            </tr>
+            {complaints.map((complaint) => {
+              return (
+                <tr key={complaint.id}>
+                  <td>{complaint.id}</td>
+                  <td>{complaint.userId}</td>
+                  <td>{complaint.message}</td>
+                  <td>{complaint.status}</td>
+                  <td>
+                    {complaint.actions}
+                    <div>
+                      <Button
+                        color="primary"
+                        onClick={() => handleDelete(complaint.id)}
+                      >
+                        delete
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </Container>

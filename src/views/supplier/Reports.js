@@ -1,16 +1,18 @@
 import { useState } from "react";
+
 // reactstrap components
 import { Container, Button, Card, CardTitle, CardText } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
 const Reports = () => {
-  const [] = useState();
+  const [copiedText, setCopiedText] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="d-flex justify-content-center mt-5">
+        {/* Table */}
         <div>
           <Card
             body

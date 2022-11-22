@@ -1,6 +1,6 @@
 import { useState } from "react";
 // react component that copies the given text inside your clipboard
-// import { CopyToClipboard } from "react-copy-to-clipboard";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 // reactstrap components
 import {
   Container,
@@ -19,11 +19,12 @@ const TrainingScheduling = () => {
   return (
     <>
       <Header />
-
-      <Container className="d-flex justify-content-center mt-5" fulid>
+      {/* Page content */}
+      <Container className="d-flex justify-content-center mt-5">
+        {/* Table */}
         <Form>
           <FormGroup>
-            <Label for="exampleEmail">PICK DATE AND COURSES</Label>
+            <Label for="exampleEmail">PAYMENT</Label>
           </FormGroup>
           <FormGroup>
             <Label for="id">ID NUMBER</Label>
@@ -40,7 +41,7 @@ const TrainingScheduling = () => {
           </FormGroup>
 
           <FormGroup>
-            <Label for="exampleDate">Date</Label>
+            <Label for="exampleDate">DATE</Label>
             <Input
               id="exampleDate"
               name="date"
@@ -48,7 +49,7 @@ const TrainingScheduling = () => {
               type="date"
             />
           </FormGroup>
-          <FormGroup>
+          {/* <FormGroup>
             <Label for="exampleTime">Time</Label>
             <Input
               id="exampleTime"
@@ -56,14 +57,14 @@ const TrainingScheduling = () => {
               placeholder="time placeholder"
               type="time"
             />
-          </FormGroup>
+          </FormGroup> */}
 
           <FormGroup>
-            <Label for="exampleSelect">SELECT COURSES</Label>
+            <Label for="exampleSelect">MODE OF PAYMENT</Label>
             <Input id="exampleSelect" name="select" type="select">
-              <option>Basic Computer Operation</option>
-              <option>Troubleshooting</option>
-              <option>Editing platform Online</option>
+              <option>Cash On Delivery</option>
+              <option>Bank Transfer</option>
+              <option>Gcash</option>
             </Input>
           </FormGroup>
 

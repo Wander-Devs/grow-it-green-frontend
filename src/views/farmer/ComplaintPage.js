@@ -6,13 +6,12 @@ import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const ComplaintPage = () => {
-  const [copiedText, setCopiedText] = useState();
+  const [] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt-4" fluid>
-        {/* Table */}
+      <Container className="d-flex justify-content-center mt-5" fuid>
         <Form>
           <FormGroup>
             COMPLAINT ID
@@ -36,13 +35,7 @@ const ComplaintPage = () => {
             <Label for="text">COMPLAINT</Label>
             <Input id="Text" name="text" type="textarea" />
           </FormGroup>
-          <Button
-            className="mt-4"
-            color="success"
-            // onClick={() => {
-            //   history.push("/admin/index");
-            // }}
-          >
+          <Button className="mt-4" color="success">
             SUBMIT
           </Button>
         </Form>
