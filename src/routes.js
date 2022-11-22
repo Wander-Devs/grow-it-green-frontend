@@ -40,19 +40,19 @@ export const routes = [
     component: FarmingTips,
     layout: "/admin",
   },
+  {
+    path: "/user",
+    name: "USER LIST",
+    icon: "ni ni-circle-08 text-green",
+    component: UserList,
+    layout: "/admin",
+  },
 
   {
     path: "/user-profile",
     name: "LOGOUT",
     icon: "ni ni-button-power text-danger",
     component: Auth,
-    layout: "/admin",
-  },
-  {
-    path: "/user",
-    name: "USER LIST",
-    icon: "ni ni-button-power text-danger",
-    component: UserList,
     layout: "/admin",
   },
 ];
