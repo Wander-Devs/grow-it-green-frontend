@@ -1,40 +1,32 @@
-import { useState } from "react";
-// node.js library that concatenates classes (strings)
-import classnames from "classnames";
-// javascipt plugin for creating charts
-import Chart from "chart.js";
-// react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
-// reactstrap components
+import { useEffect, useState } from 'react';
+import Chart from 'chart.js';
 
 import {
-  Button,
   Card,
-  CardHeader,
   CardBody,
-  NavItem,
-  NavLink,
-  Nav,
-  Progress,
-  Table,
+  CardHeader,
+  Col,
   Container,
   Row,
-  Col,
-} from "reactstrap";
+} from 'reactstrap';
 
-// core components
-import {
-  chartOptions,
-  parseOptions,
-  chartExample1,
-  chartExample2,
-} from "variables/charts.js";
+import { chartOptions, parseOptions, } from 'variables/charts.js';
 
-import Header from "components/Headers/Header.js";
+import Header from 'components/Headers/Header.js';
+
+import http from 'services/http';
 
 const Index = (props) => {
   const [activeNav, setActiveNav] = useState(1);
   const [chartExample1Data, setChartExample1Data] = useState("data1");
+  const [users, setUsers] = useState("users");
+
+  useEffect(() => {
+    http.get('/users').then((res) => {
+      console.log('response = ' + res.data[0].firstName + ' ' + res.data[0].lastName);
+      setUsers(res.data);
+    });
+  }, []);
 
   if (window.Chart) {
     parseOptions(Chart, chartOptions());
@@ -45,6 +37,7 @@ const Index = (props) => {
     setActiveNav(index);
     setChartExample1Data("data" + index);
   };
+
   return (
     <>
       <Header />
@@ -59,6 +52,10 @@ const Index = (props) => {
                     <h2 className="text-uppercase text-black ls-1 mb-1">
                       WELCOME TO GROW-IT-GREEN FARMING ASSISTANT
                     </h2>
+                    <h3>Users</h3>
+                    <ol>
+                      {users.map(user => <li>{user.firstName} {user.lastName}</li>)}
+                    </ol>
                     {/* <h3 className="text-black mb-0">2022</h3> */}
                   </div>
                   {/* <div className="col">
