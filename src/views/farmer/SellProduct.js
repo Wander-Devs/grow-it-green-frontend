@@ -2,15 +2,7 @@ import { useState } from "react";
 // react component that copies the given text inside your clipboard
 
 // reactstrap components
-import {
-  Container,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText,
-  Button,
-} from "reactstrap";
+import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
 // core components
 import Header from "components/Headers/Header.js";
 
@@ -69,8 +61,9 @@ const SellProduct = () => {
           <FormGroup>
             <h2>Add Image:</h2>
             <input type="file" onChange={handleChange} />
-            <img src={file} />
+            <img src={file} width="200px" />
           </FormGroup>
+
           <FormGroup tag="fieldset"></FormGroup>
 
           <Button className="mt-4" color="success">

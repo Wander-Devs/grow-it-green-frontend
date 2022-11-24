@@ -5,7 +5,8 @@ import { Container, Table, Button } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const CropAdvertisement = () => {
-  const [copiedText, setCopiedText] = useState();
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState();
   return (
     <>
       <Header />

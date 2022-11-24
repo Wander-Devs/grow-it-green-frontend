@@ -5,6 +5,7 @@ import { Container, Button, Card, CardTitle, CardText } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const Reports = () => {
+  // eslint-disable-next-line no-empty-pattern
   const [] = useState();
   return (
     <>
@@ -20,7 +21,7 @@ const Reports = () => {
             }}
           >
             <CardTitle tag="h2">NO REPORTS AVAILABLE</CardTitle>
-            <CardText>clivk the link below for for info</CardText>
+            <CardText>click the link below for info</CardText>
             <Button color="info">Go somewhere</Button>
           </Card>
         </div>

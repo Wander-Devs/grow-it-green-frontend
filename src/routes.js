@@ -1,7 +1,5 @@
 import Index from "views/Index.js";
 import Profile from "views/admin/Profile.js";
-import Maps from "views/admin/FarmingTips";
-import Tables from "views/admin/Complaint";
 import Icons from "views/admin/FarmingTips";
 import Auth from "layouts/Auth";
 import SellProduct from "views/farmer/SellProduct";
@@ -15,7 +13,6 @@ import FarmerProfile from "views/farmer/FarmerProfile";
 import Complaint from "views/admin/Complaint";
 import FarmingTips from "views/admin/FarmingTips";
 import UserList from "views/admin/UserList";
-import SupplierProfile from "views/supplier/Profile";
 import CropReceived from "views/supplier/CropReceived";
 
 export const routes = [

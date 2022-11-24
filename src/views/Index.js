@@ -100,52 +100,20 @@ const Index = (props) => {
                     src={
                       "https://www.hipi.info/wp-content/uploads/2014/04/2014-twitter-header-dimensions-16-1024x341.jpg"
                     }
+                    width="100%"
                   />
-                  {/* <img
-                    src={
-                      "https://th.bing.com/th/id/OIP.p191RQnQ1DQMj9CObpDP6AAAAA?pid=ImgDet&rs=1"
-                    }
-                  /> */}
-
-                  {/* <Line
-                    data={chartExample1[chartExample1Data]}
-                    options={chartExample1.options}
-                    getDatasetAtEvent={(e) => console.log(e)}
-                  /> */}
                 </div>
               </CardBody>
             </Card>
           </Col>
-          {/* <Col xl="4">
-            <Card className="shadow">
-              <CardHeader className="bg-transparent">
-                <Row className="align-items-center">
-                  <div className="col">
-                    <h6 className="text-uppercase text-muted ls-1 mb-1">
-                      Performance
-                    </h6>
-                    <h2 className="mb-0">Total orders</h2>
-                  </div>
-                </Row>
-              </CardHeader>
-              <CardBody>
-                <div className="chart">
-                  <Bar
-                    data={chartExample2.data}
-                    options={chartExample2.options}
-                  />
-                </div>
-              </CardBody>
-            </Card>
-          </Col> */}
         </Row>
-        <Row className="mt-5">
+        <Row className="mt-9">
           <Col className="mb-5 mb-xl-0" xl="8">
             <Card className="shadow">
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">UNDER DEVELOPMENT.......</h3>
+                    <h3 className="mb-0">UNDER DEVELOPMENT</h3>
                   </div>
                 </Row>
               </CardHeader>
@@ -156,7 +124,7 @@ const Index = (props) => {
               <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">
-                    <h3 className="mb-0">UNDER DEVELOPMENT.....</h3>
+                    <h3 className="mb-0">UNDER DEVELOPMENT</h3>
                   </div>
                 </Row>
               </CardHeader>

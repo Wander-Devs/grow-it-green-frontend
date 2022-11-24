@@ -13,7 +13,6 @@ import Register from "views/admin/Register";
 import FarmerLayout from "layouts/Farmer.js";
 import SupplierLayout from "layouts/Supplier";
 import ContactUs from "views/admin/ContactUs";
-//import Login from "views/examples/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

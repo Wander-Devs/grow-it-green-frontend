@@ -51,7 +51,10 @@ const Auth = (props) => {
           </Container>
 
           <div className="chart" align="center">
-            <img src={"https://wallpaperaccess.com/full/7150973.jpg"} />
+            <img
+              src={"https://wallpaperaccess.com/full/7150973.jpg"}
+              width="100%"
+            />
           </div>
         </div>
         {/* Page content */}

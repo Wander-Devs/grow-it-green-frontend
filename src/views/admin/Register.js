@@ -14,8 +14,39 @@ import {
   Col,
   Container,
 } from "reactstrap";
+import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import * as authService from "../../services/auth";
 
 const Register = () => {
+  const [registerForm, setRegisterForm] = useState({
+    name: "",
+    email: " ",
+    password: " ",
+  });
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setRegisterForm({
+      ...registerForm,
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
+
+  let history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      authService.login(registerForm).then((response) => {
+        console.log(response);
+        if (response.data && response.data.body === "Register successful") {
+          history.push("/login");
+        } else {
+          console.log(response.data.body);
+        }
+      });
+    } catch (error) {}
+  };
   return (
     <>
       <Container className="d-flex justify-content-center mt-5">
@@ -49,7 +80,7 @@ const Register = () => {
               <div className="text-center text-muted mb-4">
                 <small>Or register with credentials</small>
               </div>
-              <Form role="form">
+              <Form role="form" onSubmit={handleSubmit}>
                 <FormGroup>
                   <InputGroup className="input-group-alternative mb-3">
                     <InputGroupAddon addonType="prepend">
@@ -57,7 +88,14 @@ const Register = () => {
                         <i className="ni ni-hat-3" />
                       </InputGroupText>
                     </InputGroupAddon>
-                    <Input placeholder="Name" type="text" />
+                    <Input
+                      placeholder="Name"
+                      name="name"
+                      type="name"
+                      autoComplete="new-name"
+                      value={registerForm.name}
+                      onChange={handleChange}
+                    />
                   </InputGroup>
                 </FormGroup>
                 <FormGroup>
@@ -69,8 +107,11 @@ const Register = () => {
                     </InputGroupAddon>
                     <Input
                       placeholder="Email"
+                      name="email"
                       type="email"
                       autoComplete="new-email"
+                      value={registerForm.email}
+                      onChange={handleChange}
                     />
                   </InputGroup>
                 </FormGroup>
@@ -83,8 +124,11 @@ const Register = () => {
                     </InputGroupAddon>
                     <Input
                       placeholder="Password"
+                      name="password"
                       type="password"
                       autoComplete="new-password"
+                      value={registerForm.password}
+                      onChange={handleChange}
                     />
                   </InputGroup>
                 </FormGroup>
@@ -112,7 +156,13 @@ const Register = () => {
                   </Col>
                 </Row>
                 <div className="text-center">
-                  <Button className="mt-4" color="success" type="button">
+                  <Button
+                    className="mt-4"
+                    color="success"
+                    onClick={() => {
+                      history.push("/login");
+                    }}
+                  >
                     Create account
                   </Button>
                 </div>

@@ -6,12 +6,13 @@ import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const FarmingTips = () => {
-  const [copiedText, setCopiedText] = useState();
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
-      <Container className="mt-4" fluid>
+      <Container className="d-flex justify-content-center mt-5" fluid>
         {/* Table */}
         <Form>
           <FormGroup>

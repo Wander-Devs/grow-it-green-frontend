@@ -6,23 +6,14 @@ import { Container, Button, Form, FormGroup, Label, Input } from "reactstrap";
 import Header from "components/Headers/Header.js";
 
 const ComplaintPage = () => {
+  // eslint-disable-next-line no-empty-pattern
   const [] = useState();
   return (
     <>
       <Header />
       {/* Page content */}
       <Container className="d-flex justify-content-center mt-5">
-        {/* Table */}
         <Form>
-          <FormGroup>
-            COMPLAINT ID
-            <Input
-              id="text"
-              name="tip number"
-              placeholder="complaint id"
-              type="text"
-            />
-          </FormGroup>{" "}
           <FormGroup>
             FARMER ID
             <Input
